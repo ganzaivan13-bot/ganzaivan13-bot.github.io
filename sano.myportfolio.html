@@ -1,0 +1,582 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sano Ivan | Tech & Beyond</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Segoe Script", cursive;
+            background-color: #0b1120;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background-color: #111827;
+            border-bottom: 1px solid #263247;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0b1120, #172554);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background-color: #38bdf8;
+            color: #07111f;
+        }
+
+        .primary:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .secondary:hover {
+            background-color: #38bdf8;
+            color: #07111f;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+            color: #38bdf8;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        /* INTERESTS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #111827;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #263247;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .card .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* JOURNEY */
+        .journey {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .journey-item {
+            background-color: #111827;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #38bdf8;
+            border-radius: 5px;
+        }
+
+        .journey-item h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .journey-item p {
+            color: #cbd5e1;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background-color: #111827;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #263247;
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background-color: #111827;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 8px;
+            padding: 10px 18px;
+            border: 1px solid #38bdf8;
+            border-radius: 5px;
+            color: #38bdf8;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #38bdf8;
+            color: #07111f;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #070d18;
+            color: #64748b;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">SANO IVAN</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hello, I'm <span>Sano Ivan</span></h1>
+
+            <h2>Technology • Learning • Ideas • My Journey</h2>
+
+            <p>
+                A university student from Rwanda exploring technology,
+                artificial intelligence, web development, cybersecurity,
+                and the ideas shaping the future.
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="btn primary">Discover My Story</a>
+                <a href="#projects" class="btn secondary">View My Projects</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                My name is <strong>Sano Ivan</strong>, a college student
+                with a growing interest in technology and innovation.
+            </p>
+
+            <p>
+                I am currently exploring the world of web development,
+                artificial intelligence, cybersecurity, and other areas
+                of technology.
+            </p>
+
+            <p>
+                I believe that learning technology is a journey. I am
+                building my knowledge step by step, experimenting with
+                projects, and learning from every experience.
+            </p>
+
+            <p>
+                This website is a place where I can document that journey,
+                share what I learn, and showcase the projects I create
+                along the way.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERESTS -->
+    <section id="interests">
+
+        <h2 class="section-title">My Interests</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Web Development</h3>
+                <p>
+                    Exploring how websites and web applications
+                    are designed and built.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Learning about AI, intelligent systems,
+                    and how they are changing technology.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔐</div>
+                <h3>Cybersecurity</h3>
+                <p>
+                    Exploring cybersecurity concepts and
+                    how digital systems can be protected.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Technology</h3>
+                <p>
+                    Following new technologies and developments
+                    shaping the digital world.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOURNEY -->
+    <section id="journey">
+
+        <h2 class="section-title">My Learning Journey</h2>
+
+        <div class="journey">
+
+            <div class="journey-item">
+                <h3>Starting My Technology Journey</h3>
+
+                <p>
+                    I began exploring web development and learning
+                    the fundamentals of HTML and CSS.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <h3>Exploring Programming</h3>
+
+                <p>
+                    My next step is to continue developing my programming
+                    knowledge and explore JavaScript and backend development.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <h3>Exploring AI & Cybersecurity</h3>
+
+                <p>
+                    Alongside programming, I am interested in understanding
+                    artificial intelligence and cybersecurity.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <h3>The Goal</h3>
+
+                <p>
+                    My goal is to continuously learn, build useful projects,
+                    and develop skills that can help me contribute to the
+                    technology industry.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Student Portal</h3>
+
+                <p>
+                    A beginner web project created to explore HTML,
+                    CSS, forms, navigation, and the fundamentals of
+                    building a student registration website.
+                </p>
+
+                <a href="#">Project coming soon →</a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>More Projects Coming</h3>
+
+                <p>
+                    As I continue learning, I will add new projects
+                    here to document my progress and practical experience.
+                </p>
+
+                <a href="#">Follow my journey →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p>
+            Follow my journey as I continue learning,
+            building, and exploring technology.
+        </p>
+
+        <div class="social-links">
+
+            <!-- Replace # with your real links -->
+
+            <a href="https://x.com/sano_rw">X / Twitter</a>
+
+           ` <a href="https://github.com/ganzaivan13-bot">GitHub</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Sano Ivan. All rights reserved.
+        </p>
+
+        <p>
+            Technology • Learning • Ideas • My Journey
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```
